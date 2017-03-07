@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+# Split the given dataset into a training set and a testing set with the given ratio
+sed -n 1p $1 > header
+cp $1 tmp0
+sed -i '1d' tmp0 
+shuf tmp0 > tmp
+LINENUMBER="$(cat tmp | wc -l)"
+sed -n "1,$((${LINENUMBER} * ${2} / ${3}))p" tmp > training.bsv
+sed -n "$((${LINENUMBER} * ${2} / ${3})),${LINENUMBER}p" tmp > testing.bsv
+rm tmp0
+rm tmp
+cat header training.bsv > training_.bsv
+cat header testing.bsv > testing_.bsv
+mv training_.bsv training.bsv
+mv testing_.bsv testing.bsv
+rm header
+mv training.bsv ${4}
+mv testing.bsv ${4}
