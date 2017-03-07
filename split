@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# Split the given dataset into a training set and a testing set with the given ratio
+# Split the given dataset into a training set and a testing set with the given ratio to a given target directory
 sed -n 1p $1 > header
 cp $1 tmp0
 sed -i '1d' tmp0 
