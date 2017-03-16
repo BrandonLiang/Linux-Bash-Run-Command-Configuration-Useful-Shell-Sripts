@@ -1,0 +1,4 @@
+#!/bin/bash -e
+awk '{print int(NR-1) "|" $0}' $1 > ${1}_with_index
+sed '1s/0/id/g' ${1}_with_index > $1
+rm ${1}_with_index
