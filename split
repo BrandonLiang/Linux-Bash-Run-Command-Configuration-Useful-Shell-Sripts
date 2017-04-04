@@ -1,19 +1,18 @@
 #!/bin/bash -e
 
-# Split the given dataset into a training set and a testing set with the given ratio to a given target directory
+#Split the given dataset into a training set and a testing set with the given ratio to a given target directory
+rm -r ${4}
+mkdir ${4}
 sed -n 1p $1 > header
-cp $1 tmp0
-sed -i '1d' tmp0 
-shuf tmp0 > tmp
+sed '1d' $1 | gshuf > tmp
 LINENUMBER="$(cat tmp | wc -l)"
-sed -n "1,$((${LINENUMBER} * ${2} / ${3}))p" tmp > training.bsv
-sed -n "$((${LINENUMBER} * ${2} / ${3})),${LINENUMBER}p" tmp > testing.bsv
-rm tmp0
+sed -n "1,$((${LINENUMBER} * ${2} / ${3}))p" tmp > training.csv
+sed -n "$((${LINENUMBER} * ${2} / ${3})),${LINENUMBER}p" tmp > testing.csv
 rm tmp
-cat header training.bsv > training_.bsv
-cat header testing.bsv > testing_.bsv
-mv training_.bsv training.bsv
-mv testing_.bsv testing.bsv
+cat header training.csv > training_.csv
+cat header testing.csv > testing_.csv
+mv training_.csv training.csv
+mv testing_.csv testing.csv
 rm header
-mv training.bsv ${4}
-mv testing.bsv ${4}
+mv training.csv ${4}
+mv testing.csv ${4}
