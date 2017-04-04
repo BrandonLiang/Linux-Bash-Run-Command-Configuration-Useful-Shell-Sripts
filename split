@@ -1,7 +1,9 @@
 #!/bin/bash -e
 
 #Split the given dataset into a training set and a testing set with the given ratio to a given target directory
-rm -r ${4}
+if [ -d ${4} ]; then
+  rm -r ${4}
+fi
 mkdir ${4}
 sed -n 1p $1 > header
 sed '1d' $1 | gshuf > tmp
