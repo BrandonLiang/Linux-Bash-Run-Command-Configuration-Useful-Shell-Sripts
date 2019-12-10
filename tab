@@ -1,3 +1,8 @@
+:set tabstop=2      " To match the sample file
+:set noexpandtab    " Use tabs, not spaces
+:%retab!            " Retabulate the whole file
+
+--------doesn't work------------
 :set ts=8
 :set noet
 :%retab!
