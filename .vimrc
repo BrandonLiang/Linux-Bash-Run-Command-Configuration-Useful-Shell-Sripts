@@ -55,6 +55,14 @@ augroup configgroup
     autocmd FileType java setlocal list
     autocmd FileType java setlocal listchars=tab:+\ ,eol:-
     autocmd FileType java setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType py setlocal noexpandtab
+    autocmd FileType py setlocal list
+    autocmd FileType py setlocal listchars=tab:+/ ,eol:s-
+    autocmd FileType py setlocal formatprg=par\ -w80\ -T4
+    autocmd FileType txt setlocal noexpandtab
+    autocmd FileType txt setlocal list
+    autocmd FileType txt setlocal listchars=tab:+/ ,eol:s-
+    autocmd FileType txt setlocal formatprg=par\ -w80\ -T4
     autocmd FileType php setlocal expandtab
     autocmd FileType php setlocal list
     autocmd FileType php setlocal listchars=tab:+\ ,eol:-
