@@ -99,4 +99,5 @@ git config --global color.ui auto
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export GOOGLE_APPLICATION_CREDENTIALS="$HOME/src/google_cloud_project-bcbe950409ad.json"
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/src/speech-to-text-807cad04130b.json"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
