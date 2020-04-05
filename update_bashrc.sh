@@ -2,5 +2,5 @@
 
 mv ~/.bashrc ~/.bashrc_original
 cp ./.bashrc ~/.bashrc
-cp ./vimrc ~/.vimrc
+cp ./.vimrc ~/.vimrc
 bash
