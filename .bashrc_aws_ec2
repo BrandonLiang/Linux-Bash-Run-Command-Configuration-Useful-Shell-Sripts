@@ -1,0 +1,7 @@
+alias l='ls -ltha'                                                                                                                                                                
+alias today='date +"%A, %B %-d, %Y"'
+alias git_log="git log --all --decorate --oneline --graph"
+git config --global color.ui auto
+export PS1="$(date +%Y/%m/%d\ %H:%M:%S) $(whoami)@$(hostname):$(pwd)\$ "
+alias mlps3=/apollo/env/HoverboardDefaultMLPS3Tool/bin/mlps3
+export PATH="/home/ec2-user/anaconda3/bin:$PATH"
