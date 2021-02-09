@@ -78,7 +78,8 @@ WHITE='\[\033[01;00m\]'
 GREEN='\[\033[01;32m\]'
 BLUE='\[\033[01;34m\]'
 #export PS1="${debian_chroot:+($debian_chroot)}$GREEN\u$WHITE@$BLUE\h$WHITE\w\$ " 
-export PS1="$(date +%Y/%m/%d\ %H:%M:%S) ${debian_chroot:+($debian_chroot)}$GREEN\u$WHITE@$BLUE\h$WHITE\w\$ "
+#export PS1="$(date +%Y/%m/%d\ %H:%M:%S) ${debian_chroot:+($debian_chroot)}$GREEN\u$WHITE@$BLUE\h$WHITE\w\$ "
+export PS1='$(whoami)@$(hostname):$(pwd)$ '
 git config --global color.ui auto
 # Enable tab completion
 #source ~/git-completion.bash
